@@ -1,0 +1,1 @@
+- [x] Add badges display to player profile in /perfil command
