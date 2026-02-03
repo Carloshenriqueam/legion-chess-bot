@@ -276,6 +276,7 @@ async def create_lichess_game(time_control: str, rated: bool = True) -> Optional
         _last_create_game_error = "Token do Lichess não configurado. Configure a variável LICHESS_TOKEN."
         logger.error(_last_create_game_error)
         return None
+    token = token.strip()
     
     # Parse time_control (formato: "10+0" ou "5+3")
     try:
@@ -458,6 +459,7 @@ async def create_lichess_tournament(
         _last_create_game_error = "Token do Lichess não configurado. Configure a variável LICHESS_TOKEN."
         logger.error(_last_create_game_error)
         return None
+    token = token.strip()
 
     url = f"{LICHESS_API_BASE}/api/tournament"
     headers = {
@@ -646,6 +648,7 @@ async def create_lichess_swiss_tournament(
         _last_create_game_error = "Token do Lichess não configurado. Configure a variável LICHESS_TOKEN."
         logger.error(_last_create_game_error)
         return None
+    token = token.strip()
 
     logger.warning(f"DEBUG: Token primeiros 10 chars: {token[:10]}...")
     logger.warning(f"DEBUG: Team ID: {team_id}")

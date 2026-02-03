@@ -268,6 +268,13 @@ if __name__ == '__main__':
     start_backend()
     
     print(f"🔑 Usando token iniciando em: {discord_token[:5]}... (Verifique se bate com o novo)")
+    
+    lichess_token = os.environ.get('LICHESS_TOKEN')
+    if lichess_token:
+        lichess_token = lichess_token.strip()
+        print(f"♟️ Lichess token encontrado: {lichess_token[:4]}...{lichess_token[-4:] if len(lichess_token) > 8 else ''}")
+    else:
+        print("⚠️ Lichess token NÃO encontrado no ambiente!")
 
     try:
         bot.run(discord_token.strip())
