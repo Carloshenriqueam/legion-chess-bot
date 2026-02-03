@@ -853,18 +853,6 @@ class GameFinishView(View):
                 except Exception as e:
                     logger.error(f"❌ Erro ao enviar resultado na DM para {player_id}: {e}")
             
-            # Envia o mesmo embed no canal do servidor
-            try:
-                # Verifica novamente se ainda não foi enviado (proteção contra duplicação)
-                final_check = await database.get_challenge(self.challenge_id)
-                if final_check and final_check['status'] == 'finished':
-                    channel = await self.bot.fetch_channel(int(updated_challenge['channel_id']))
-                    await channel.send(embeds=result_embeds)
-                    logger.info(f"📨 Resultado enviado no canal {channel.name}")
-                else:
-                    logger.warning(f"⚠️ Desafio {self.challenge_id} não está finalizado, pulando envio no canal")
-            except Exception as e:
-                logger.error(f"❌ Erro ao enviar resultado no canal: {e}")
             button.disabled = True
             button.style = discord.ButtonStyle.danger
             if self.message:

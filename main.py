@@ -1,17 +1,22 @@
 ﻿# main.py
+import sys
+import os
+
+# Garante que o diretório atual está no path (necessário em alguns hosts)
+if os.getcwd() not in sys.path:
+    sys.path.insert(0, os.getcwd())
+
 import discord
 from discord.ext import commands
-import os
 import asyncio
 from dotenv import load_dotenv
-import sys
 import logging
 import lichess_api
 import database
 import subprocess
 import time
 import atexit
-# Carrega as variÃ¡veis do arquivo .env
+
 load_dotenv()
 
 logging.basicConfig(

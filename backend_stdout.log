@@ -17294,3 +17294,23 @@ Erro ao buscar ranking: name 'discord_id' is not defined
    GET /api/search?query=<name> - Buscar jogadores
    GET /api/stats-gerais - Estatisticas gerais
    GET /api/health - Health check
+[OK] Banco de dados encontrado: C:\Users\carlu\legion-chess-bot\legion_chess.db
+[OK] Banco de dados inicializado com tabelas necessárias
+[INFO] Iniciando servidor em http://localhost:5000
+[INFO] Endpoints disponiveis:
+   GET /api/ranking/<mode> - Ranking de um modo
+   GET /api/jogador/<discord_id> - Detalhes de um jogador
+   GET /api/search?query=<name> - Buscar jogadores
+   GET /api/stats-gerais - Estatisticas gerais
+   GET /api/health - Health check
+[OK] Banco de dados encontrado: C:\Users\carlu\legion-chess-bot\legion_chess.db
+[OK] Banco de dados inicializado com tabelas necessárias
+[INFO] Iniciando servidor em http://localhost:5000
+[INFO] Endpoints disponiveis:
+   GET /api/ranking/<mode> - Ranking de um modo
+   GET /api/jogador/<discord_id> - Detalhes de um jogador
+   GET /api/search?query=<name> - Buscar jogadores
+   GET /api/stats-gerais - Estatisticas gerais
+   GET /api/health - Health check
+ * Serving Flask app 'app'
+ * Debug mode: on
