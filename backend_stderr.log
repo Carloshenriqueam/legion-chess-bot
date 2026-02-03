@@ -27526,3 +27526,11 @@ Traceback (most recent call last):
   File "C:\Users\carlu\AppData\Local\Programs\Python\Python314\Lib\typing.py", line 1963, in __new__
     def __new__(mcls, name, bases, namespace, /, **kwargs):
 KeyboardInterrupt
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory
+python: can't open file 'C:\\Users\\carlu\\legion-chess-bot\\backend\\app.py': [Errno 2] No such file or directory

@@ -17,7 +17,9 @@ import subprocess
 import time
 import atexit
 
-load_dotenv()
+# Garante que carrega o .env da pasta do script e sobrescreve variáveis antigas
+from pathlib import Path
+load_dotenv(dotenv_path=Path(__file__).parent / '.env', override=True)
 
 logging.basicConfig(
     level=logging.WARNING,
@@ -212,9 +214,12 @@ def start_backend():
     """Inicia o servidor Flask do backend em subprocess."""
     global backend_proc
     
-    # Caminhos do backend
-    venv_python = r"C:\Users\carlu\legion-chess-bot\venv\Scripts\python.exe"
-    backend_app = r"C:\Users\carlu\Desktop\legionchess-new\backend\app.py"
+    # Caminhos do backend (corrigidos para funcionar na host)
+    # O host usará o Python do ambiente global, não de um venv específico.
+    venv_python = "python" 
+    # O caminho para o backend deve ser relativo.
+    # Certifique-se de que a pasta 'backend' está no mesmo nível do 'main.py'.
+    backend_app = os.path.join("backend", "app.py")
     
     try:
         # Abre arquivos de log
@@ -256,11 +261,20 @@ atexit.register(stop_backend)
 if __name__ == '__main__':
     discord_token = os.environ.get('DISCORD_TOKEN')
     if not discord_token:
-        print('âŒ DISCORD_TOKEN nÃ£o encontrado no arquivo .env!')
+        print('❌ DISCORD_TOKEN não encontrado no arquivo .env!')
         exit(1)
 
     # Inicia o backend antes do bot
     start_backend()
     
-    bot.run(discord_token)
+    print(f"🔑 Usando token iniciando em: {discord_token[:5]}... (Verifique se bate com o novo)")
 
+    try:
+        bot.run(discord_token.strip())
+    except discord.errors.LoginFailure:
+        print("\n❌ ERRO DE LOGIN: O token do Discord é inválido.")
+        print("ℹ️  Verifique o arquivo .env. Você pode ter substituído o token real pelo exemplo.")
+        stop_backend()
+    except Exception as e:
+        print(f"\n❌ Erro ao iniciar: {e}")
+        stop_backend()
