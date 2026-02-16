@@ -12,56 +12,71 @@ class Utility(commands.Cog):
         """Mostra todos os comandos disponíveis."""
         embed = discord.Embed(
             title="♦ Legion Chess App - Comandos",
-            description="Sistema de xadrez competitivo",
+            description="Sistema de xadrez competitivo — comandos /slash disponíveis",
             color = 0xCD0000
         )
         
         embed.add_field(
             name="📝 Registro",
-            value="`/registrar [lichess_username]` - Registra você no sistema\n"
-                  "`/perfil [@jogador]` - Mostra o perfil de um jogador",
+            value=("`/registrar [lichess_username]` - Registra seu username Lichess\n"
+                   "`/verificar-lichess` - Verifica sua conta Lichess\n"
+                   "`/atualizar-nome [novo_nome]` - Atualiza seu nome no banco\n"
+                   "`/perfil [@jogador]` - Mostra o perfil de um jogador"),
             inline=False
         )
         
         embed.add_field(
             name="⚔️ Desafios",
-            value="`/desafiar @jogador [tempo]` - Desafia um jogador\n"
-                  "`/aceitar <id>` - Aceita um desafio\n"
-                  "`/recusar <id>` - Recusa um desafio\n"
-                  "`/agendar @jog1 @jog2 [tempo] [rating] [DD/MM/YYYY HH:MM]` - Agenda partida programada (ADMIN)\n"
-                  "`/partidas-programadas` - Lista suas partidas agendadas\n"
-                  "`/desafios` - Lista seus desafios pendentes",
+            value=("`/desafiar @jogador [modo] [time_control] [valer_rating]` - Desafia outro jogador\n"
+                   "`/aceitar <id>` - Aceita um desafio\n"
+                   "`/recusar <id>` - Recusa um desafio\n"
+                   "`/agendar-partida @jog1 @jog2 [tempo] [rating] [DD/MM/YYYY HH:MM]` - Agenda partida (ADMIN)\n"
+                   "`/partidas-programadas` - Lista suas partidas agendadas\n"
+                   "`/desafios` - Lista seus desafios pendentes"),
             inline=False
         )
-        
+
         embed.add_field(
-            name="🏆 Rankings",
-            value="`/rankings` - Mostra os rankings interativos\n"
-                  "`/set_fixed_ranking #canal` - Define ranking fixo (admins)\n",
+            name="🏆 Torneios (Suíço)",
+            value=("`/criar_swiss` - Cria torneio suíço local\n"
+                   "`/entrar_swiss <id>` - Mensagem com botão para entrar\n"
+                   "`/iniciar_torneio <id>` - Inicia torneio (suíço/regular)\n"
+                   "`/abandonar_torneio <id>` - Abandona torneio (penalidade)"),
+            inline=False
+        )
+
+        embed.add_field(
+            name="🏆 Torneios Oficiais (Bracket)",
+            value=("`/torneio_oficial criar` - Cria torneio oficial (bracket)\n"
+                   "`/torneio_oficial iniciar <id>` - Inicia o torneio\n"
+                   "`/torneio_oficial bracket <id>` - Exibe o bracket\n"
+                   "`/torneio_oficial partidas_pendentes <id>` - Lista partidas pendentes"),
+            inline=False
+        )
+
+        embed.add_field(
+            name="📊 Rankings & Estatísticas",
+            value=("`/rankings` - Mostra os rankings\n"
+                   "`/set_fixed_ranking #canal` - Define ranking fixo (admin)\n"
+                   "`/set_ranking_channel` / ` /remove_ranking_channel` / `recreate_fixed_ranking` - Admin\n"
+                   "`/histórico` - Suas últimas partidas\n"
+                   "`/badges` - Seus achievements"),
             inline=False
         )
 
         embed.add_field(
             name="🧩 Puzzles",
-            value="`/puzzle-diario` - Mostra o puzzle diário do Lichess",
+            value=("`/puzzle-diario` - Puzzle do dia (admin)\n"
+                   "`/responder <movimento>` - Responder puzzle"),
             inline=False
         )
 
         embed.add_field(
-            name="🏆 Torneios",
-            value="`/criar_torneio` - Cria torneio (admins)\n"
-                  "`/torneios` - Lista torneios abertos\n"
-                  "`/participar_torneio` - Participa de torneio\n"
-                  "`/torneio_info` - Info detalhada do torneio\n"
-                  "`/iniciar_torneio` - Inicia torneio (admins)\n"
-                  "`/avancar_torneio` - Próxima rodada (admins)",
-            inline=False
-        )
-
-        embed.add_field(
-            name="ℹ️ Outros",
-            value="`/ping` - Testa se o bot está respondendo\n"
-                  "`/ajuda` - Mostra esta mensagem de ajuda",
+            name="🔧 Utilitários / Admin",
+            value=("`/ping` - Latência do bot\n"
+                   "`/ajuda` - Mostra esta mensagem\n"
+                   "`/sync_commands` - Sincroniza comandos (admin)\n"
+                   "`/check_games` / `debug-scheduled` / `ativar-atrasados` - Debug / admin"),
             inline=False
         )
     
