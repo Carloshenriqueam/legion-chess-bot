@@ -204,7 +204,8 @@ async def load_cogs():
     await bot.load_extension("cogs.chess")
     await bot.load_extension("cogs.rankings")
     await bot.load_extension("cogs.tournaments")
-    await bot.load_extension("cogs.official_tournament")
+    # `torneio_oficial` desabilitado — comandos removidos do bot por solicitação
+    # await bot.load_extension("cogs.official_tournament")
     await bot.load_extension("cogs.statistics")
 
 # --- GERENCIAMENTO DO BACKEND ---

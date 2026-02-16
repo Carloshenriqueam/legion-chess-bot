@@ -45,14 +45,7 @@ class Utility(commands.Cog):
             inline=False
         )
 
-        embed.add_field(
-            name="🏆 Torneios Oficiais (Bracket)",
-            value=("`/torneio_oficial criar` - Cria torneio oficial (bracket)\n"
-                   "`/torneio_oficial iniciar <id>` - Inicia o torneio\n"
-                   "`/torneio_oficial bracket <id>` - Exibe o bracket\n"
-                   "`/torneio_oficial partidas_pendentes <id>` - Lista partidas pendentes"),
-            inline=False
-        )
+
 
         embed.add_field(
             name="📊 Rankings & Estatísticas",
