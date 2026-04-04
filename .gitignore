@@ -1,6 +1,14 @@
+# Segredos e Variáveis de Ambiente
 .env
+
+# Python e Ambiente Virtual
 __pycache__/
-*.pyc
+*.py[cod]
 venv/
+
+# Banco de Dados (SQLite)
+*.db
+
+# Logs de Execução
 *.log
-legion_chess.db
+backend_*.log
